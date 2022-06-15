@@ -10,7 +10,7 @@ sudo dnf group install "base-x" "Common NetworkManager Submodules" "Standard" "P
 echo;
 echo "Install the needed applications";
 echo;
-sudo dnf install slick-greeter dunst orchis picom network-manager-applet papirus-icon-theme kde-connect nitrogen xscreensaver synapse polybar vim gvim tilix pcmanfm xbacklight xrandr openbox obconf dnfdragora -y;
+sudo dnf install slick-greeter dunst picom network-manager-applet papirus-icon-theme kde-connect nitrogen xscreensaver synapse polybar vim gvim tilix pcmanfm xbacklight xrandr openbox obconf dnfdragora -y;
 echo;
 echo "Install browser";
 echo;
