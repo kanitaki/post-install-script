@@ -30,7 +30,7 @@ git clone --depth=1 https://github.com/adi1090x/polybar-themes.git && cd polybar
 echo;
 echo "Install flapak programs";
 echo;
-sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo && flatpak install com.notepadqq.Notepadqq com.visualstudio.code io.lmms.LMMS org.musescore.MuseScore com.obsproject.Studio com.uploadedlobster.peek org.kde.minuet net.xmind.XMind org.darktable.Darktable org.kde.krita libresprite pixelorama foliate pdfarranger gpuviewer antimicrox firmware pupgui2 wonderwall com.github.unrud.VideoDownloader Komikku rosegarden io.github.muse_sequencer.Muse -y;
+flatpak update && flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo && flatpak install com.mojang.Minecraft com.notepadqq.Notepadqq com.visualstudio.code io.lmms.LMMS org.musescore.MuseScore com.obsproject.Studio com.uploadedlobster.peek org.kde.minuet net.xmind.XMind org.darktable.Darktable org.kde.krita libresprite pixelorama foliate pdfarranger gpuviewer antimicrox firmware pupgui2 wonderwall com.github.unrud.VideoDownloader Komikku rosegarden io.github.muse_sequencer.Muse -y;
 echo;
 echo "Install Heroic launcher";
 echo;
@@ -45,5 +45,5 @@ sudo mkdir ~/.config/openbox && touch ~/.config/openbox/autostart && echo "sleep
 echo;
 echo "Enable all the things";
 echo;
-sudo systemctl set-default graphical.target && sudo systemctl enable lightdm:
+sudo systemctl set-default graphical.target && sudo systemctl enable lightdm;
 echo;
