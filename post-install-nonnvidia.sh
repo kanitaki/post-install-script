@@ -48,7 +48,7 @@ sudo systemctl set-default graphical.target && sudo systemctl enable lightdm;
 echo;
 echo "Add all the needed lines to the Openbox autostart file";
 echo;
-sudo mkdir ~/.config/openbox && touch ~/.config/openbox/autostart;
+sudo mkdir -p ~/.config/openbox && touch ~/.config/openbox/autostart;
 echo "sleep 1 && nitrogen --restore &" >> ~/.config/openbox/autostart;
 echo "exec dunst &" >> ~/.config/openbox/autostart;
 echo "exec synapse &" >> ~/.config/openbox/autostart;
