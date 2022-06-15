@@ -40,5 +40,5 @@ curl https://raw.githubusercontent.com/the-anonymous-raven/polybar-themes/main/i
 echo;
 echo "Install flapak programs";
 echo;
-flatpak install notepadqq visualstudio.code blanket kdenlive lmms musescore obsproject.studio peek minuet xmind darktable krita libresprite pixelorama foliate pdfarranger gpuviewer antimicrox firmware pupgui2 wonderwall spotify videodownloader Komikku rosegarden io.github.muse_sequencer.Muse -y;
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo && flatpak install notepadqq visualstudio.code blanket kdenlive lmms musescore obsproject.studio peek minuet xmind darktable krita libresprite pixelorama foliate pdfarranger gpuviewer antimicrox firmware pupgui2 wonderwall spotify videodownloader Komikku rosegarden io.github.muse_sequencer.Muse -y;
 
