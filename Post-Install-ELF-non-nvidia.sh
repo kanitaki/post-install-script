@@ -10,12 +10,8 @@ sudo dnf group install "base-x" "Common NetworkManager Submodules" "Standard" "P
 echo;
 echo "Enable COPR Repos";
 sudo dnf copr enable dturner/TOS -y;
-sudo dnf copr enable atim/heroic-games-launcher -y;
+sudo dnf copr enable atim/heroic-games-launcher -yq;
 sudo dnf update --refresh -yq;
-echo;
-echo "Install the needed applications";
-echo;
-sudo dnf install slick-greeter xfce4-settings flatpak lightdm heroic-games-launcher-bin obmenu-generator lightdm-gtk-greeter-settings cantata dunst picom rofi network-manager-applet papirus-icon-theme kde-connect nitrogen xscreensaver synapse polybar vim gvim tilix pcmanfm xbacklight xrandr openbox obconf dnfdragora -y --skip-broken;
 echo;
 echo "Install browser";
 echo;
