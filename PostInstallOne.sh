@@ -12,5 +12,5 @@ echo "Installing flatpak";
 sudo dnf install flatpak -y;
 echo;
 echo "Run the second script after a reboot. Rebooting in 60 seconds."
-wait 60;
+sleep 60;
 reboot;
