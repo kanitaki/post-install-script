@@ -31,11 +31,11 @@ SETUP NEEDED BEFORE RUNNING SCRIPTS:
    
  9) Move into the directory and run PostInstallOne.sh:
  
-   -#cd post-install-script && ./PostInstallOne.sh
+   -#cd post-install-script && sudo ./PostInstallOne.sh
    
  10) After the reboot, run the second script:
  
-   -#cd post-install-script && ./PostInstallTwo.sh
+   -#cd post-install-script && sudo ./PostInstallTwo.sh
    
  11) Edit the /etc/default/grub file as noted in guide provided by asus-linux.org:
  
