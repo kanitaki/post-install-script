@@ -25,15 +25,19 @@ SETUP NEEDED BEFORE RUNNING SCRIPTS:
  
    -#git clone https://github.com/kanitaki/post-install-script
    
- 8) Move into the directory and run PostInstallOne.sh:
+ 8) Add the necessary execute bit:
+ 
+   -#chmod -R +x post-install-script/*
+   
+ 9) Move into the directory and run PostInstallOne.sh:
  
    -#cd post-install-script && ./PostInstallOne.sh
    
- 9) After the reboot, run the second script:
+ 10) After the reboot, run the second script:
  
    -#cd post-install-script && ./PostInstallTwo.sh
    
- 10) Edit the /etc/default/grub file as noted in guide provided by asus-linux.org:
+ 11) Edit the /etc/default/grub file as noted in guide provided by asus-linux.org:
  
  "Edit the file to look like below. Note that if disk encryption was enabled during installation, there will be additional configuration text in the GRUB_CMDLINE_LINUX line that must be preserved.
 
@@ -46,11 +50,11 @@ GRUB_CMDLINE_LINUX="rd.driver.blacklist=nouveau modprobe.blacklist=nouveau nvidi
 GRUB_DISABLE_RECOVERY="true"
 GRUB_ENABLE_BLSCFG=true"
 
- 11) Rebuild initramfs:
+ 12) Rebuild initramfs:
 
   -#sudo grub2-mkconfig -o /etc/grub2.cfg
   
- 12) Edit .config/openbox/autostart to include:
+ 13) Edit .config/openbox/autostart to include:
  
 killall -9 nitrogen compton dunst rofi plank xfsettingsd nm-applet mpd flameshot
 sleep 1 && nitrogen --restore &
@@ -65,7 +69,7 @@ exec nm-applet &
 exec flameshot &
 exec pasystray &
 
- 13) Reboot.
+ 14) Reboot.
  
 You should be met with a GUI login and default to openbox with a tint2 bar. 
 
