@@ -33,11 +33,13 @@ SETUP NEEDED BEFORE RUNNING SCRIPTS:
  
    -#cd post-install-script && sudo ./PostInstallOne.sh
    
- 10) After the reboot, run the second script:
+ 10) Reboot
+   
+ 11) After the reboot, run the second script:
  
    -#cd post-install-script && sudo ./PostInstallTwo.sh
    
- 11) Edit the /etc/default/grub file as noted in guide provided by asus-linux.org:
+ 12) Edit the /etc/default/grub file as noted in guide provided by asus-linux.org:
  
  "Edit the file to look like below. Note that if disk encryption was enabled during installation, there will be additional configuration text in the GRUB_CMDLINE_LINUX line that must be preserved.
 
@@ -50,11 +52,11 @@ GRUB_CMDLINE_LINUX="rd.driver.blacklist=nouveau modprobe.blacklist=nouveau nvidi
 GRUB_DISABLE_RECOVERY="true"
 GRUB_ENABLE_BLSCFG=true"
 
- 12) Rebuild initramfs:
+ 13) Rebuild initramfs:
 
   -#sudo grub2-mkconfig -o /etc/grub2.cfg
   
- 13) Edit .config/openbox/autostart to include:
+ 14) Edit .config/openbox/autostart to include:
  
 killall -9 nitrogen compton dunst rofi plank xfsettingsd nm-applet mpd flameshot
 sleep 1 && nitrogen --restore &
@@ -69,7 +71,7 @@ exec nm-applet &
 exec flameshot &
 exec pasystray &
 
- 14) Reboot.
+ 15) Reboot.
  
 You should be met with a GUI login and default to openbox with a tint2 bar. 
 
