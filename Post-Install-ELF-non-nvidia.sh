@@ -36,6 +36,3 @@ echo "Enable all the things";
 echo;
 sudo systemctl set-default graphical.target && sudo systemctl enable lightdm;
 echo;
-echo "Install git"
-sudo dnf install git -yq;
-echo
