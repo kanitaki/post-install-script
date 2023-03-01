@@ -9,6 +9,7 @@ echo;
 sudo dnf group install "base-x" "Common NetworkManager Submodules" "Standard" "Printing Support" "Core" "Fonts" "Hardware Support" "System Tools" "C Development Tools and Libraries" "Development Tools" "Sound and Video" -yq;
 echo;
 echo "Installing flatpak";
+echo;
 sudo dnf install flatpak -y;
 echo;
 echo "Run the second script after a reboot. Rebooting in 60 seconds."
