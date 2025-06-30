@@ -123,7 +123,7 @@ sudo apt install -y \
     nmap \
     traceroute \
     iptables \
-    ufw \
+    firewalld \
     openssh-client \
     openssh-server
 
@@ -145,7 +145,7 @@ sudo apt install -y \
     apparmor-profiles \
     apparmor-profiles-extra \
     fail2ban \
-    ufw \
+    firewalld \
     rkhunter \
     chkrootkit \
     clamav \
@@ -346,9 +346,9 @@ sudo systemctl start apparmor
 sudo systemctl enable fail2ban
 sudo systemctl start fail2ban
 
-# Enable and start UFW firewall
-sudo ufw --force enable
-sudo systemctl enable ufw
+# Enable and start firewalld
+sudo systemctl enable firewalld
+sudo systemctl start firewalld
 
 # Configure fail2ban
 log "Configuring fail2ban..."
@@ -368,11 +368,31 @@ logpath = /var/log/auth.log
 maxretry = 3
 EOF
 
-# Configure UFW firewall
-log "Configuring UFW firewall..."
-sudo ufw default deny incoming
-sudo ufw default allow outgoing
-sudo ufw allow ssh
+# Configure firewalld
+log "Configuring firewalld..."
+# Set default zone to public
+sudo firewall-cmd --set-default-zone=public
+
+# Enable SSH service (allows SSH connections)
+sudo firewall-cmd --permanent --add-service=ssh
+
+# Add some common services (uncomment as needed)
+# sudo firewall-cmd --permanent --add-service=http
+# sudo firewall-cmd --permanent --add-service=https
+# sudo firewall-cmd --permanent --add-service=ftp
+
+# Allow specific ports if needed (examples)
+# sudo firewall-cmd --permanent --add-port=8080/tcp
+# sudo firewall-cmd --permanent --add-port=3000/tcp
+
+# Enable logging for denied packets
+sudo firewall-cmd --set-log-denied=all
+
+# Reload firewall rules
+sudo firewall-cmd --reload
+
+# Show current configuration
+sudo firewall-cmd --list-all
 
 # Create user directories
 log "Creating user directories..."
@@ -1033,6 +1053,13 @@ echo "2. Log in through LightDM"
 echo "3. Select bspwm as your session"
 echo "4. Configure your WiFi using nm-applet"
 echo "5. Install additional applications as needed"
+echo ""
+echo "Firewall (firewalld) commands:"
+echo "sudo firewall-cmd --list-all                    # Show current rules"
+echo "sudo firewall-cmd --permanent --add-service=http # Allow HTTP"
+echo "sudo firewall-cmd --permanent --add-port=8080/tcp # Allow specific port"
+echo "sudo firewall-cmd --reload                      # Apply changes"
+echo "sudo firewall-cmd --get-services               # List available services"
 echo ""
 echo "Key bindings:"
 echo "Super + Return: Terminal"
