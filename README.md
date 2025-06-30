@@ -75,4 +75,8 @@ exec pasystray &
  
 You should be met with a GUI login and default to openbox with a tint2 bar. 
 
-I will add dotfiles for easier configuration at a later date.
+=============================================================================
+
+Debian scripts have been added, generated via various AI. These are only to be used for testing purposes.
+
+Finalized scripts will be updated and configured as testing is completed.
