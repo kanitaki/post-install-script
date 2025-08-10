@@ -3,6 +3,14 @@ Install Fedora packages to stand up a base install.
 
 This is specific to an Asus Zephyrus G14(2020).
 
+===========================================================================================================
+*
+* Debian scripts have been added, generated via various AI. These are only to be used for testing purposes.
+*
+* Finalized scripts will be updated and configured as testing is completed.
+*
+===========================================================================================================
+
 Includes several configurations/packages/fixes found at asus-linux.org.
 
 SETUP NEEDED BEFORE RUNNING SCRIPTS:
@@ -75,8 +83,3 @@ exec pasystray &
  
 You should be met with a GUI login and default to openbox with a tint2 bar. 
 
-=============================================================================
-
-Debian scripts have been added, generated via various AI. These are only to be used for testing purposes.
-
-Finalized scripts will be updated and configured as testing is completed.
