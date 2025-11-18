@@ -21,8 +21,6 @@ echo -e "${YELLOW}Installing base packages...${NC}"
 sudo dnf install -y \
     openbox \
     obconf \
-    obmenu \
-    tint2 \
     nitrogen \
     picom \
     rofi \
@@ -35,7 +33,6 @@ sudo dnf install -y \
     thunar-volman \
     network-manager-applet \
     pavucontrol \
-    pulseaudio \
     brightnessctl \
     lxappearance \
     papirus-icon-theme \
@@ -47,11 +44,9 @@ sudo dnf install -y \
     wget \
     vim \
     htop \
-    neofetch \
     ranger \
     mpv \
     vlc \
-    firefox
 
 # Install Polybar (from Fedora repos or build from source)
 echo -e "${YELLOW}Installing Polybar...${NC}"
