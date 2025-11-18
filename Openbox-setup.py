@@ -68,13 +68,13 @@ def install_packages():
     
     print_status("Installing base packages...", Colors.YELLOW)
     packages = [
-        'openbox', 'obconf', 'obmenu', 'tint2', 'nitrogen', 'picom',
+        'openbox', 'obconf', 'nitrogen', 'picom',
         'rofi', 'alacritty', 'dunst', 'feh', 'scrot', 'thunar',
         'thunar-archive-plugin', 'thunar-volman', 'network-manager-applet',
-        'pavucontrol', 'pulseaudio', 'brightnessctl', 'lxappearance',
+        'pavucontrol', 'brightnessctl', 'lxappearance',
         'papirus-icon-theme', 'google-noto-sans-fonts', 'google-noto-sans-mono-fonts',
         'google-noto-emoji-fonts', 'git', 'curl', 'wget', 'vim', 'htop',
-        'neofetch', 'ranger', 'mpv', 'vlc', 'firefox', 'polkit-gnome',
+        'ranger', 'mpv', 'vlc', 'polkit-gnome',
         'xfce4-power-manager', 'clipit', 'volumeicon', 'gedit',
         'gnome-calculator', 'eog', 'file-roller'
     ]
