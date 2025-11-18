@@ -64,7 +64,7 @@ def download_file(url: str, destination: Path):
 def install_packages():
     """Install all required packages"""
     print_status("Updating system...", Colors.YELLOW)
-    run_command(['sudo', 'dnf', 'update', '-y'])
+    run_command(['sudo', 'dnf', 'update', '-y', '--skip-unavailable', '--skip-broken'])
     
     print_status("Installing base packages...", Colors.YELLOW)
     packages = [
@@ -74,12 +74,11 @@ def install_packages():
         'pavucontrol', 'brightnessctl', 'lxappearance',
         'papirus-icon-theme', 'google-noto-sans-fonts', 'google-noto-sans-mono-fonts',
         'google-noto-emoji-fonts', 'git', 'curl', 'wget', 'vim', 'htop',
-        'ranger', 'mpv', 'vlc', 'polkit-gnome',
-        'xfce4-power-manager', 'clipit', 'volumeicon', 'gedit',
+        'ranger', 'mpv', 'vlc', 'xfce4-power-manager', 'clipit', 'volumeicon', 'gedit',
         'gnome-calculator', 'eog', 'file-roller'
     ]
     
-    run_command(['sudo', 'dnf', 'install', '-y'] + packages)
+    run_command(['sudo', 'dnf', 'install', '-y', '--skip-unavailable', '--skip-broken'] + packages)
 
 def install_polybar():
     """Install Polybar"""
