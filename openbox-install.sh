@@ -47,7 +47,7 @@ sudo dnf install -y \
     ranger \
     mpv \
     vlc \
-
+    
 # Install Polybar (from Fedora repos or build from source)
 echo -e "${YELLOW}Installing Polybar...${NC}"
 if ! dnf list installed polybar &>/dev/null; then
@@ -92,6 +92,158 @@ mkdir -p ~/Pictures/Wallpapers
 # Download Nord wallpaper
 echo -e "${YELLOW}Downloading Nord wallpaper...${NC}"
 wget -O ~/Pictures/Wallpapers/nord-mountain.png "https://raw.githubusercontent.com/linuxdotexe/nordic-wallpapers/master/wallpapers/nordic-mountain-range.png" 2>/dev/null || echo "Wallpaper download skipped"
+
+# Create Nord Openbox theme
+echo -e "${YELLOW}Creating Nord Openbox theme...${NC}"
+mkdir -p ~/.themes/Nord/openbox-3
+cat > ~/.themes/Nord/openbox-3/themerc << 'THEME_EOF'
+# Nord Aurora Openbox Theme
+
+# Window geometry
+padding.width: 8
+padding.height: 8
+border.width: 2
+window.client.padding.width: 0
+window.client.padding.height: 0
+window.handle.width: 0
+
+# Menu geometry
+menu.border.width: 2
+menu.overlap.x: -8
+menu.overlap.y: 0
+
+# Border colors
+window.active.border.color: #88C0D0
+window.inactive.border.color: #3B4252
+menu.border.color: #88C0D0
+window.active.client.color: #2E3440
+window.inactive.client.color: #2E3440
+
+# Titlebar
+window.active.title.bg: flat solid
+window.active.title.bg.color: #2E3440
+window.active.title.separator.color: #2E3440
+window.inactive.title.bg: flat solid
+window.inactive.title.bg.color: #2E3440
+window.inactive.title.separator.color: #2E3440
+
+# Titlebar text
+window.label.text.justify: left
+window.active.label.bg: parentrelative
+window.active.label.text.color: #88C0D0
+window.inactive.label.bg: parentrelative
+window.inactive.label.text.color: #4C566A
+
+# Window buttons
+window.active.button.unpressed.bg: flat solid
+window.active.button.unpressed.bg.color: #2E3440
+window.active.button.unpressed.image.color: #88C0D0
+
+window.active.button.pressed.bg: flat solid
+window.active.button.pressed.bg.color: #3B4252
+window.active.button.pressed.image.color: #8FBCBB
+
+window.active.button.disabled.bg: flat solid
+window.active.button.disabled.bg.color: #2E3440
+window.active.button.disabled.image.color: #4C566A
+
+window.active.button.hover.bg: flat solid
+window.active.button.hover.bg.color: #3B4252
+window.active.button.hover.image.color: #8FBCBB
+
+window.active.button.toggled.unpressed.bg: flat solid
+window.active.button.toggled.unpressed.bg.color: #2E3440
+window.active.button.toggled.unpressed.image.color: #88C0D0
+
+window.active.button.toggled.pressed.bg: flat solid
+window.active.button.toggled.pressed.bg.color: #3B4252
+window.active.button.toggled.pressed.image.color: #8FBCBB
+
+window.active.button.toggled.hover.bg: flat solid
+window.active.button.toggled.hover.bg.color: #3B4252
+window.active.button.toggled.hover.image.color: #8FBCBB
+
+window.inactive.button.unpressed.bg: flat solid
+window.inactive.button.unpressed.bg.color: #2E3440
+window.inactive.button.unpressed.image.color: #4C566A
+
+window.inactive.button.pressed.bg: flat solid
+window.inactive.button.pressed.bg.color: #3B4252
+window.inactive.button.pressed.image.color: #4C566A
+
+window.inactive.button.disabled.bg: flat solid
+window.inactive.button.disabled.bg.color: #2E3440
+window.inactive.button.disabled.image.color: #3B4252
+
+window.inactive.button.hover.bg: flat solid
+window.inactive.button.hover.bg.color: #3B4252
+window.inactive.button.hover.image.color: #D8DEE9
+
+window.inactive.button.toggled.unpressed.bg: flat solid
+window.inactive.button.toggled.unpressed.bg.color: #2E3440
+window.inactive.button.toggled.unpressed.image.color: #4C566A
+
+window.inactive.button.toggled.pressed.bg: flat solid
+window.inactive.button.toggled.pressed.bg.color: #3B4252
+window.inactive.button.toggled.pressed.image.color: #4C566A
+
+window.inactive.button.toggled.hover.bg: flat solid
+window.inactive.button.toggled.hover.bg.color: #3B4252
+window.inactive.button.toggled.hover.image.color: #D8DEE9
+
+# Menu
+menu.title.bg: flat solid
+menu.title.bg.color: #2E3440
+menu.title.text.color: #88C0D0
+menu.title.text.justify: center
+
+menu.items.bg: flat solid
+menu.items.bg.color: #2E3440
+menu.items.text.color: #D8DEE9
+menu.items.disabled.text.color: #4C566A
+
+menu.items.active.bg: flat solid
+menu.items.active.bg.color: #88C0D0
+menu.items.active.text.color: #2E3440
+
+menu.separator.color: #3B4252
+menu.separator.width: 1
+menu.separator.padding.width: 6
+menu.separator.padding.height: 3
+
+# OSD
+osd.border.width: 2
+osd.border.color: #88C0D0
+
+osd.bg: flat solid
+osd.bg.color: #2E3440
+osd.label.bg: flat solid
+osd.label.bg.color: #2E3440
+osd.label.text.color: #D8DEE9
+
+osd.hilight.bg: flat solid
+osd.hilight.bg.color: #88C0D0
+
+osd.unhilight.bg: flat solid
+osd.unhilight.bg.color: #3B4252
+
+osd.button.unpressed.bg: flat border
+osd.button.unpressed.bg.color: #2E3440
+osd.button.unpressed.*.border.color: #3B4252
+osd.button.unpressed.text.color: #D8DEE9
+
+osd.button.pressed.bg: flat border
+osd.button.pressed.bg.color: #88C0D0
+osd.button.pressed.*.border.color: #88C0D0
+osd.button.pressed.text.color: #2E3440
+osd.button.pressed.box.color: #88C0D0
+
+osd.button.focused.bg: flat solid border
+osd.button.focused.bg.color: #2E3440
+osd.button.focused.*.border.color: #88C0D0
+osd.button.focused.text.color: #88C0D0
+osd.button.focused.box.color: #88C0D0
+THEME_EOF
 
 # Configure Openbox
 echo -e "${YELLOW}Configuring Openbox...${NC}"
@@ -213,10 +365,14 @@ cat > ~/.config/openbox/autostart << 'EOF'
 #!/bin/bash
 
 # Set wallpaper
-nitrogen --restore &
+if [ -f ~/Pictures/Wallpapers/nord-mountain.png ]; then
+    nitrogen --set-zoom-fill ~/Pictures/Wallpapers/nord-mountain.png &
+else
+    nitrogen --restore &
+fi
 
-# Compositor for transparency
-picom -b &
+# Compositor for transparency and effects
+picom -b --config ~/.config/picom/picom.conf &
 
 # Notification daemon
 dunst &
@@ -227,14 +383,107 @@ dunst &
 # Network manager applet
 nm-applet &
 
-# System tray volume control
-volumeicon &
+# Volume icon in system tray (if available)
+if command -v volumeicon &> /dev/null; then
+    volumeicon &
+fi
 
-# Power management
-xfce4-power-manager &
+# Polkit authentication agent
+/usr/libexec/polkit-gnome-authentication-agent-1 &
+
+# Clipboard manager
+if command -v clipit &> /dev/null; then
+    clipit &
+fi
 EOF
 
 chmod +x ~/.config/openbox/autostart
+
+# Configure picom (compositor)
+echo -e "${YELLOW}Configuring picom compositor...${NC}"
+mkdir -p ~/.config/picom
+cat > ~/.config/picom/picom.conf << 'EOF'
+# Nord-themed Picom Configuration
+
+# Shadow
+shadow = true;
+shadow-radius = 12;
+shadow-opacity = 0.75;
+shadow-offset-x = -12;
+shadow-offset-y = -12;
+shadow-color = "#000000"
+
+shadow-exclude = [
+  "name = 'Notification'",
+  "class_g = 'Conky'",
+  "class_g ?= 'Notify-osd'",
+  "class_g = 'Cairo-clock'",
+  "_GTK_FRAME_EXTENTS@:c"
+];
+
+# Fading
+fading = true;
+fade-in-step = 0.03;
+fade-out-step = 0.03;
+fade-delta = 5;
+
+# Transparency / Opacity
+inactive-opacity = 0.95;
+frame-opacity = 1.0;
+inactive-opacity-override = false;
+active-opacity = 1.0;
+
+focus-exclude = [ "class_g = 'Cairo-clock'" ];
+
+opacity-rule = [
+  "100:class_g = 'Alacritty' && focused",
+  "95:class_g = 'Alacritty' && !focused",
+  "100:class_g = 'firefox'",
+  "100:class_g = 'Thunar'"
+];
+
+# Background blurring
+blur-method = "dual_kawase";
+blur-strength = 5;
+blur-background = true;
+blur-background-frame = true;
+blur-background-fixed = true;
+
+blur-background-exclude = [
+  "window_type = 'dock'",
+  "window_type = 'desktop'",
+  "_GTK_FRAME_EXTENTS@:c"
+];
+
+# Corners
+corner-radius = 8;
+rounded-corners-exclude = [
+  "window_type = 'dock'",
+  "window_type = 'desktop'"
+];
+
+# General Settings
+backend = "glx";
+vsync = true;
+mark-wmwin-focused = true;
+mark-ovredir-focused = true;
+detect-rounded-corners = true;
+detect-client-opacity = true;
+detect-transient = true;
+glx-no-stencil = true;
+glx-no-rebind-pixmap = true;
+use-damage = true;
+log-level = "warn";
+
+wintypes:
+{
+  tooltip = { fade = true; shadow = true; opacity = 0.95; focus = true; full-shadow = false; };
+  dock = { shadow = false; clip-shadow-above = true; }
+  dnd = { shadow = false; }
+  popup_menu = { opacity = 0.95; }
+  dropdown_menu = { opacity = 0.95; }
+};
+EOF
 
 # Configure Polybar with Nord Aurora
 echo -e "${YELLOW}Configuring Polybar...${NC}"
@@ -292,15 +541,21 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = "Noto Sans:size=10;2"
-font-1 = "Font Awesome 6 Free:style=Solid:size=10;2"
-font-2 = "Font Awesome 6 Brands:size=10;2"
+font-1 = "Noto Sans:size=10:style=Bold;2"
+font-2 = "Noto Emoji:scale=10;2"
 
 modules-left = workspaces xwindow
 modules-center = date
 modules-right = pulseaudio memory cpu temperature network battery powermenu
 
+tray-position = right
+tray-padding = 2
+tray-background = ${colors.background}
+
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+enable-ipc = true
 
 [module/workspaces]
 type = internal/xworkspaces
@@ -343,12 +598,12 @@ format-volume = <ramp-volume> <label-volume>
 label-volume = %percentage%%
 label-volume-foreground = ${colors.foreground}
 
-label-muted =  muted
+label-muted = 🔇 muted
 label-muted-foreground = ${colors.nord3}
 
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
+ramp-volume-0 = 🔈
+ramp-volume-1 = 🔉
+ramp-volume-2 = 🔊
 ramp-volume-foreground = ${colors.primary}
 
 click-right = pavucontrol
@@ -357,7 +612,7 @@ click-right = pavucontrol
 type = internal/memory
 interval = 3
 
-format-prefix = " "
+format-prefix = "💾 "
 format-prefix-foreground = ${colors.primary}
 label = %percentage_used%%
 
@@ -365,7 +620,7 @@ label = %percentage_used%%
 type = internal/cpu
 interval = 2
 
-format-prefix = " "
+format-prefix = "⚡ "
 format-prefix-foreground = ${colors.primary}
 label = %percentage%%
 
@@ -381,9 +636,9 @@ label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.alert}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+ramp-0 = 🌡️
+ramp-1 = 🌡️
+ramp-2 = 🌡️
 ramp-foreground = ${colors.primary}
 
 [module/network]
@@ -394,10 +649,10 @@ interval = 3.0
 format-connected = <label-connected>
 format-disconnected = <label-disconnected>
 
-label-connected =  %essid%
+label-connected = 📶 %essid%
 label-connected-foreground = ${colors.success}
 
-label-disconnected = 
+label-disconnected = 📡
 label-disconnected-foreground = ${colors.alert}
 
 [module/battery]
@@ -414,24 +669,24 @@ label-charging = %percentage%%
 label-discharging = %percentage%%
 label-full = %percentage%%
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+ramp-capacity-0 = 🪫
+ramp-capacity-1 = 🔋
+ramp-capacity-2 = 🔋
+ramp-capacity-3 = 🔋
+ramp-capacity-4 = 🔋
 ramp-capacity-foreground = ${colors.primary}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
+animation-charging-0 = 🔌
+animation-charging-1 = 🔌
+animation-charging-2 = 🔌
+animation-charging-3 = 🔌
+animation-charging-4 = 🔌
 animation-charging-foreground = ${colors.success}
 animation-charging-framerate = 750
 
 [module/powermenu]
 type = custom/text
-content = 
+content = ⏻
 content-foreground = ${colors.alert}
 click-left = ~/.config/rofi/powermenu.sh
 
@@ -760,21 +1015,208 @@ Exec=openbox-session
 Type=Application
 EOF
 
+# Configure GTK theme settings
+echo -e "${YELLOW}Configuring GTK theme...${NC}"
+mkdir -p ~/.config/gtk-3.0
+cat > ~/.config/gtk-3.0/settings.ini << 'EOF'
+[Settings]
+gtk-theme-name=Adwaita-dark
+gtk-icon-theme-name=Papirus-Dark
+gtk-font-name=Noto Sans 10
+gtk-cursor-theme-name=Adwaita
+gtk-cursor-theme-size=24
+gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ
+gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
+gtk-button-images=1
+gtk-menu-images=1
+gtk-enable-event-sounds=1
+gtk-enable-input-feedback-sounds=0
+gtk-xft-antialias=1
+gtk-xft-hinting=1
+gtk-xft-hintstyle=hintslight
+gtk-xft-rgba=rgb
+gtk-application-prefer-dark-theme=1
+EOF
+
+cat > ~/.gtkrc-2.0 << 'EOF'
+gtk-theme-name="Adwaita-dark"
+gtk-icon-theme-name="Papirus-Dark"
+gtk-font-name="Noto Sans 10"
+gtk-cursor-theme-name="Adwaita"
+gtk-cursor-theme-size=24
+gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ
+gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
+gtk-button-images=1
+gtk-menu-images=1
+gtk-enable-event-sounds=1
+gtk-enable-input-feedback-sounds=0
+gtk-xft-antialias=1
+gtk-xft-hinting=1
+gtk-xft-hintstyle="hintslight"
+gtk-xft-rgba="rgb"
+EOF
+
+# Set up nitrogen config for wallpaper
+echo -e "${YELLOW}Configuring nitrogen...${NC}"
+mkdir -p ~/.config/nitrogen
+cat > ~/.config/nitrogen/bg-saved.cfg << 'EOF'
+[xin_-1]
+file=PLACEHOLDER_WALLPAPER
+mode=5
+bgcolor=#2e3440
+EOF
+
+# Replace placeholder with actual wallpaper path
+if [ -f ~/Pictures/Wallpapers/nord-mountain.png ]; then
+    sed -i "s|PLACEHOLDER_WALLPAPER|$HOME/Pictures/Wallpapers/nord-mountain.png|" ~/.config/nitrogen/bg-saved.cfg
+fi
+
+cat > ~/.config/nitrogen/nitrogen.cfg << 'EOF'
+[geometry]
+posx=450
+posy=200
+sizex=600
+sizey=500
+
+[nitrogen]
+view=icon
+recurse=true
+sort=alpha
+icon_caps=false
+dirs=PLACEHOLDER_WALLPAPER_DIR;
+EOF
+
+sed -i "s|PLACEHOLDER_WALLPAPER_DIR|$HOME/Pictures/Wallpapers|" ~/.config/nitrogen/nitrogen.cfg
+
+# Create right-click menu configuration
+echo -e "${YELLOW}Creating Openbox menu...${NC}"
+cat > ~/.config/openbox/menu.xml << 'EOF'
+<?xml version="1.0" encoding="UTF-8"?>
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+    <menu id="root-menu" label="Openbox">
+        <item label="Terminal">
+            <action name="Execute">
+                <command>alacritty</command>
+            </action>
+        </item>
+        <item label="Web Browser">
+            <action name="Execute">
+                <command>firefox</command>
+            </action>
+        </item>
+        <item label="File Manager">
+            <action name="Execute">
+                <command>thunar</command>
+            </action>
+        </item>
+        <item label="Text Editor">
+            <action name="Execute">
+                <command>gedit</command>
+            </action>
+        </item>
+        <separator />
+        <menu id="applications-menu" label="Applications">
+            <item label="Calculator">
+                <action name="Execute">
+                    <command>gnome-calculator</command>
+                </action>
+            </item>
+            <item label="Image Viewer">
+                <action name="Execute">
+                    <command>eog</command>
+                </action>
+            </item>
+            <item label="Video Player">
+                <action name="Execute">
+                    <command>mpv</command>
+                </action>
+            </item>
+            <item label="Archive Manager">
+                <action name="Execute">
+                    <command>file-roller</command>
+                </action>
+            </item>
+        </menu>
+        <separator />
+        <menu id="settings-menu" label="Settings">
+            <item label="Openbox Configuration">
+                <action name="Execute">
+                    <command>obconf</command>
+                </action>
+            </item>
+            <item label="GTK Theme Settings">
+                <action name="Execute">
+                    <command>lxappearance</command>
+                </action>
+            </item>
+            <item label="Wallpaper">
+                <action name="Execute">
+                    <command>nitrogen</command>
+                </action>
+            </item>
+            <item label="Audio Settings">
+                <action name="Execute">
+                    <command>pavucontrol</command>
+                </action>
+            </item>
+            <item label="Power Management">
+                <action name="Execute">
+                    <command>xfce4-power-manager-settings</command>
+                </action>
+            </item>
+        </menu>
+        <separator />
+        <item label="Reconfigure">
+            <action name="Reconfigure" />
+        </item>
+        <item label="Exit">
+            <action name="Exit">
+                <prompt>yes</prompt>
+            </action>
+        </item>
+    </menu>
+</openbox_menu>
+EOF
+
 echo -e "${GREEN}Installation complete!${NC}"
+echo ""
+echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${GREEN}         Nord Aurora Openbox Setup Complete!${NC}"
+echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo ""
 echo -e "${YELLOW}Keybindings:${NC}"
-echo "  Super + Enter    : Open Alacritty terminal"
-echo "  Super + D        : Application launcher"
-echo "  Super + Tab      : Window switcher"
-echo "  Super + P        : Power menu"
-echo "  Super + N        : Network menu"
-echo "  Super + A        : Audio menu"
-echo "  Super + Q        : Close window"
-echo "  Super + F        : Toggle fullscreen"
-echo "  Print            : Take screenshot"
-echo "  Super + 1-4      : Switch workspaces"
+echo "  ${GREEN}Super + Enter${NC}    : Open Alacritty terminal"
+echo "  ${GREEN}Super + D${NC}        : Application launcher (Rofi)"
+echo "  ${GREEN}Super + Tab${NC}      : Window switcher"
+echo "  ${GREEN}Super + P${NC}        : Power menu"
+echo "  ${GREEN}Super + N${NC}        : Network menu"
+echo "  ${GREEN}Super + A${NC}        : Audio menu"
+echo "  ${GREEN}Super + Q${NC}        : Close window"
+echo "  ${GREEN}Super + F${NC}        : Toggle fullscreen"
+echo "  ${GREEN}Print${NC}            : Take screenshot"
+echo "  ${GREEN}Super + 1-4${NC}      : Switch workspaces"
+echo "  ${GREEN}Alt + F4${NC}         : Close window"
+echo "  ${GREEN}Right Click${NC}      : Context menu"
+echo ""
+echo -e "${YELLOW}Installed Features:${NC}"
+echo "  • ${GREEN}Window Manager:${NC} Openbox with Nord theme"
+echo "  • ${GREEN}Status Bar:${NC} Polybar with system monitoring"
+echo "  • ${GREEN}Application Launcher:${NC} Rofi with Nord Aurora colors"
+echo "  • ${GREEN}Terminal:${NC} Alacritty with Nord color scheme"
+echo "  • ${GREEN}Compositor:${NC} Picom (transparency, shadows, blur)"
+echo "  • ${GREEN}File Manager:${NC} Thunar"
+echo "  • ${GREEN}Notifications:${NC} Dunst"
+echo "  • ${GREEN}Wallpaper:${NC} Nitrogen (Nord wallpaper included)"
 echo ""
 echo -e "${YELLOW}To start Openbox:${NC}"
-echo "  - From login screen: Select 'Openbox' session"
-echo "  - From terminal: Run 'startx' (if no display manager)"
+echo "  1. ${GREEN}Logout${NC} from your current session"
+echo "  2. At the login screen, select ${GREEN}'Openbox'${NC} from session menu"
+echo "  3. Login with your credentials"
 echo ""
-echo -e "${GREEN}Please reboot or logout and select Openbox session!${NC}"
+echo -e "${YELLOW}Or from terminal:${NC}"
+echo "  Run ${GREEN}'startx'${NC} (if no display manager is running)"
+echo ""
+echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${GREEN}Enjoy your new Nord-themed Openbox environment!${NC}"
+echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo ""
