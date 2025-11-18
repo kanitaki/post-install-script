@@ -64,7 +64,7 @@ def download_file(url: str, destination: Path):
 def install_packages():
     """Install all required packages"""
     print_status("Updating system...", Colors.YELLOW)
-    run_command(['sudo', 'dnf', 'update', '-y', '--skip-unavailable', '--skip-broken'])
+    run_command(['sudo', 'dnf', 'update', '-y'])
     
     print_status("Installing base packages...", Colors.YELLOW)
     packages = [
